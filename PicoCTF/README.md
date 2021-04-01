@@ -1,6 +1,6 @@
 # CTF Name
 
-![CTFtime Weight: 0](https://img.shields.io/badge/CTFtime%20Weight-0-critical) ![Teams Participated: ](https://img.shields.io/badge/Teams%20Participated-240-informational)
+![CTFtime Weight: 0](https://img.shields.io/badge/CTFtime%20Weight-0-critical) ![Teams Participated: 6215](https://img.shields.io/badge/Teams%20Participated-6215-informational)
 
 **Tue, 16 March 2021, 17:00 UTC — Tue, 30 March 2021, 20:00 UTC**
 
@@ -29,8 +29,10 @@ Competitors must reverse-engineer, break, hack, decrypt, and think creatively an
 - [Obedient Cat](#obedient-cat) ![General Skills](https://img.shields.io/badge/General%20Skills-yellow)
 - [Python Wrangling](#python-wrangling) ![General Skills](https://img.shields.io/badge/General%20Skills-yellow)
 - [Scavenger Hunt](#scavenger-hunt) ![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
+- [Some Assembly Required 1](#some-assembly-required-1) ![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
 - [Static ain't always noise](#static-aint-always-noise) ![General Skills](https://img.shields.io/badge/General%20Skills-yellow)
 - [Tab, Tab, Attack](#tab-tab-attack) ![General Skills](https://img.shields.io/badge/General%20Skills-yellow)
+- [Transformation](#transformation) ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
 - [Trivial Flag Transfer Protocol](#trivial-flag-transfer-protocol) ![Forensics](https://img.shields.io/badge/Forensics-orange)
 - [tunn3l v1s10n](#tunn3l-v1s10n) ![Forensics](https://img.shields.io/badge/Forensics-orange)
 - [Wave a flag](#wave-a-flag) ![General Skills](https://img.shields.io/badge/General%20Skills-yellow)
@@ -41,8 +43,7 @@ Competitors must reverse-engineer, break, hack, decrypt, and think creatively an
 
 - [ ] crackme-py ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
 - [ ] keygenme-py ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
-- [ ] Some Assembly Required 1 ![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
-- [ ] Transformation ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
+- [ ] Mini RSA ![Cryptography](https://img.shields.io/badge/Cryptography-blue)
 - [ ] Who are you? ![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
 
 ---
@@ -862,6 +863,37 @@ And finally, this last part hints towards the [.DS_Store](http://mercury.picoctf
 
 ---
 
+## Some Assembly Required 1
+
+![Solves: 1274](https://img.shields.io/badge/Solves-1274-brightgreen) ![Points: 70](https://img.shields.io/badge/Points-70-blue)
+
+**Challenge Category**
+
+![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
+
+**Challenge Description**
+
+```
+Author: Sears Schulz
+Description
+
+http://mercury.picoctf.net:26318/index.html
+```
+
+**Flag**
+
+```
+picoCTF{8857462f9e30faae4d037e5e25fee1ce}
+```
+
+### Solution
+
+The name of the challenge refers to a JavaScript `WebAssembly` file. You can view `WebAssembly` files in the `Debugger` tab of your browser's developer tools. Scroll to the bottom to find the flag.
+
+![some_assembly_required_11.jpg](img/screenshots/some_assembly_required_11.jpg)
+
+---
+
 ## Static ain't always noise
 
 ![Solves: 3291](https://img.shields.io/badge/Solves-3291-brightgreen) ![Points: 20](https://img.shields.io/badge/Points-20-blue)
@@ -943,6 +975,44 @@ Unzip the file and `grep` for the flag format.
 $ unzip -q Addadshashanammu.zip
 $ egrep -aoir 'picoCTF\{[^\}]+\}' Addadshashanammu
 Addadshashanammu/Almurbalarammi/Ashalmimilkala/Assurnabitashpi/Maelkashishi/Onnissiralis/Ularradallaku/fang-of-haynekhtnamet:picoCTF{l3v3l_up!_t4k3_4_r35t!_d32e018c}
+```
+
+---
+
+## Transformation
+
+![Solves: 1218](https://img.shields.io/badge/Solves-1218-brightgreen) ![Points: 20](https://img.shields.io/badge/Points-20-blue)
+
+**Challenge Category**
+
+![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
+
+**Challenge Description**
+
+```
+Author: madStacks
+Description
+
+I wonder what this really is... enc ''.join([chr((ord(flag[i]) << 8) + ord(flag[i + 1])) for i in range(0, len(flag), 2)])
+```
+
+**Challenge Files**
+
+[enc](files/transformation/enc)
+
+**Flag**
+
+```
+picoCTF{16_bits_inst34d_of_8_26684c20}
+```
+
+### Solution
+
+The challenge description tells us how the flag was encoded. It takes every two characters and combines them into one 16-bit character. All we have to do is reverse the process to retrieve the flag.
+
+```bash
+$ python3 -c "with open('enc','rb') as f:print(''.join(chr(i>>8)+chr(i&0xff) for i in map(ord,f.read().decode())))"
+picoCTF{16_bits_inst34d_of_8_26684c20}
 ```
 
 ---
