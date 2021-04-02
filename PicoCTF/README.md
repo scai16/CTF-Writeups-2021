@@ -20,6 +20,7 @@ Competitors must reverse-engineer, break, hack, decrypt, and think creatively an
 - [Easy Peasy](#easy-peasy) ![Cryptography](https://img.shields.io/badge/Cryptography-blue)
 - [Get aHEAD](#get-ahead) ![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
 - [information](#information) ![Forensics](https://img.shields.io/badge/Forensics-orange)
+- [keygenme-py](files/keygenme_py/keygenme-trial.py) ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
 - [MacroHard WeakEdge](#macrohard-weakedge) ![Forensics](https://img.shields.io/badge/Forensics-orange)
 - [Magikarp Ground Mission](#magikarp-ground-mission) ![General Skills](https://img.shields.io/badge/General%20Skills-yellow)
 - [Matryoshka doll](#matryoshka-doll) ![Forensics](https://img.shields.io/badge/Forensics-orange)
@@ -42,7 +43,6 @@ Competitors must reverse-engineer, break, hack, decrypt, and think creatively an
 
 ## To Do
 
-- [ ] keygenme-py ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
 - [ ] Mini RSA ![Cryptography](https://img.shields.io/badge/Cryptography-blue)
 - [ ] Who are you? ![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
 
