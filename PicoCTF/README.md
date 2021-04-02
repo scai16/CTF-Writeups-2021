@@ -1,4 +1,4 @@
-# CTF Name
+# PicoCTF 2021
 
 ![CTFtime Weight: 0](https://img.shields.io/badge/CTFtime%20Weight-0-critical) ![Teams Participated: 6215](https://img.shields.io/badge/Teams%20Participated-6215-informational)
 
@@ -16,6 +16,7 @@ Competitors must reverse-engineer, break, hack, decrypt, and think creatively an
 
 - [Ancient History](#ancient-history) ![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
 - [Cookies](#cookies) ![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
+- [crackme-py](#crackme-py) ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
 - [Easy Peasy](#easy-peasy) ![Cryptography](https://img.shields.io/badge/Cryptography-blue)
 - [Get aHEAD](#get-ahead) ![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
 - [information](#information) ![Forensics](https://img.shields.io/badge/Forensics-orange)
@@ -41,7 +42,6 @@ Competitors must reverse-engineer, break, hack, decrypt, and think creatively an
 
 ## To Do
 
-- [ ] crackme-py ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
 - [ ] keygenme-py ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
 - [ ] Mini RSA ![Cryptography](https://img.shields.io/badge/Cryptography-blue)
 - [ ] Who are you? ![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
@@ -131,6 +131,48 @@ Finally (this step isn't required but will save you time from having to parse th
 Now we're ready to start the attack. After letting it run for a bit, we see this:
 
 ![cookies6.jpg](img/screenshots/cookies6.jpg)
+
+---
+
+## crackme-py
+
+![Solves: 2504](https://img.shields.io/badge/Solves-2504-brightgreen) ![Points: 30](https://img.shields.io/badge/Points-30-blue)
+
+**Challenge Category**
+
+![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
+
+**Challenge Description**
+
+```
+Author: syreal
+Description
+
+crackme.py
+```
+
+**Challenge Files**
+
+[crackme.py](files/crackme_py/crackme.py)
+
+**Flag**
+
+```
+picoCTF{1|\/|_4_p34|\|ut_4593da8a}
+```
+
+### Solution
+
+The flag is hidden in the source code in a variable named `bezos_cc_secret`, which contains a ROT47 encoded string. The source code also contains a decoding function. Run the program in interactive mode with `python -i` to retrieve the flag.
+
+```bash
+$ python3 -i crackme.py
+What's your first number?
+What's your second number?
+The number with largest positive magnitude is
+>>> decode_secret(bezos_cc_secret)
+picoCTF{1|\/|_4_p34|\|ut_4593da8a}
+```
 
 ---
 
@@ -279,6 +321,128 @@ $ strings cat.jpg
 ```bash
 $ echo cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9 | base64 -d
 picoCTF{the_m3tadata_1s_modified}
+```
+
+---
+
+## keygenme-py
+
+![Solves: 1302](https://img.shields.io/badge/Solves-1302-brightgreen) ![Points: 30](https://img.shields.io/badge/Points-30-blue)
+
+**Challenge Category**
+
+![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
+
+**Challenge Description**
+
+```
+Author: syreal
+Description
+
+keygenme-trial.py
+```
+
+**Challenge Files**
+
+[keygenme-trial.py](files/keygenme_py/keygenme-trial.py)
+
+**Flag**
+
+```
+picoCTF{1n_7h3_|<3y_of_f911a486}
+```
+
+### Solution
+
+If you look through the source code, you notice this section near the top:
+
+```python
+username_trial = "GOUGH"
+bUsername_trial = b"GOUGH"
+
+key_part_static1_trial = "picoCTF{1n_7h3_|<3y_of_"
+key_part_dynamic1_trial = "xxxxxxxx"
+key_part_static2_trial = "}"
+key_full_template_trial = key_part_static1_trial + key_part_dynamic1_trial + key_part_static2_trial
+```
+
+The key template appears to match our flag format, except there is a section that's missing. We need to figure out how to recover the missing portion.
+
+Further down in the code is a `check_key` function:
+
+```python
+def check_key(key, username_trial):
+
+    global key_full_template_trial
+
+    if len(key) != len(key_full_template_trial):
+        return False
+    else:
+        # Check static base key part --v
+        i = 0
+        for c in key_part_static1_trial:
+            if key[i] != c:
+                return False
+
+            i += 1
+
+        # TODO : test performance on toolbox container
+        # Check dynamic part --v
+        if key[i] != hashlib.sha256(username_trial).hexdigest()[4]:
+            return False
+        else:
+            i += 1
+
+        if key[i] != hashlib.sha256(username_trial).hexdigest()[5]:
+            return False
+        else:
+            i += 1
+
+        if key[i] != hashlib.sha256(username_trial).hexdigest()[3]:
+            return False
+        else:
+            i += 1
+
+        if key[i] != hashlib.sha256(username_trial).hexdigest()[6]:
+            return False
+        else:
+            i += 1
+
+        if key[i] != hashlib.sha256(username_trial).hexdigest()[2]:
+            return False
+        else:
+            i += 1
+
+        if key[i] != hashlib.sha256(username_trial).hexdigest()[7]:
+            return False
+        else:
+            i += 1
+
+        if key[i] != hashlib.sha256(username_trial).hexdigest()[1]:
+            return False
+        else:
+            i += 1
+
+        if key[i] != hashlib.sha256(username_trial).hexdigest()[8]:
+            return False
+
+
+
+        return True
+```
+
+The `check_key` function contains a hard coded check for the missing part of the flag. All we have to do is retrieve the missing portion by reversing the process.
+
+```python
+#!/usr/bin/env python3
+from hashlib import sha256
+
+
+username_trial = b'GOUGH'
+char_index = [4, 5, 3, 6, 2, 7, 1, 8]
+name_hash = sha256(username_trial).hexdigest()
+missing_chars = ''.join(name_hash[c] for c in char_index)
+print(f"picoCTF{{1n_7h3_|<3y_of_{missing_chars}}}")
 ```
 
 ---
