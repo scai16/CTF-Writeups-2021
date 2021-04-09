@@ -1,4 +1,4 @@
-# CTF Name
+# Cyber FastTrack Spring 2021
 
 ![Place: 9th](https://img.shields.io/badge/Place-9th-success) ![Players Participated: 1590](https://img.shields.io/badge/Players%20Participated-1590-informational)
 
@@ -36,6 +36,7 @@ training.
 
 ### Forensics
 
+- [FE01](#fe01)
 - [FE02](#fe02)
 - [FE03](#fe03)
 - [FE04](#fe04)
@@ -51,7 +52,6 @@ training.
 
 ## To Do
 
-- [ ] FE01
 - [ ] WE01
 - [ ] WE02
 - [ ] WM01
