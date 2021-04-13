@@ -50,14 +50,17 @@ training.
 - [NE01](#ne01)
 - [NM01](#nm01)
 
+### Web
+
+- [WE01](#we01)
+- [WE02](#we02)
+- [WM01](#wm01)
+- [WM02](#wm02)
+- [WM03](#wm03)
+- [WM04](#wm04)
+
 ## To Do
 
-- [ ] WE01
-- [ ] WE02
-- [ ] WM01
-- [ ] WM02
-- [ ] WM03
-- [ ] WM04
 - [ ] WM05
 - [ ] WH01
 - [ ] WH02
@@ -1535,3 +1538,453 @@ if __name__ == '__main__':
     r.sendline(data)
     print(r.recvall().decode())
 ```
+
+---
+
+## WE01
+
+![Points: 100](https://img.shields.io/badge/Points-100-blue)
+
+**Challenge Category**
+
+![Web](https://img.shields.io/badge/Web-brightgreen)
+
+**Challenge Description**
+
+```
+View the page at https://cfta-we01.allyourbases.co and try to get the flag.
+```
+
+**Flag**
+
+```
+unicode+obfuscation=js*fun
+```
+
+### Solution
+
+When we visit the page, we see this:
+
+![we01_index.png](img/screenshots/we01_index.png)
+
+The text on the site is javascript code translated to [Aurebesh](https://starwars.fandom.com/wiki/Aurebesh). Despite being translated to another language, javascript can still interpret this code perfectly fine. Copy and paste the code into the debugging console to retrieve the flag.
+
+![we01_1.png](img/screenshots/we01_1.png)
+
+---
+
+## WE02
+
+![Points: 100](https://img.shields.io/badge/Points-100-blue)
+
+**Challenge Category**
+
+![Web](https://img.shields.io/badge/Web-brightgreen)
+
+**Challenge Description**
+
+```
+View the page at https://cfta-we02.allyourbases.co and try to get the flag.
+```
+
+**Flag**
+
+```
+Shhh_robot_you_said_too_much!
+```
+
+### Solution
+
+![we02_index.png](img/screenshots/we02_index.png)
+
+During our initial recon, we discover a hidden page in the `robots.txt` file.
+
+```bash
+$ curl https://cfta-we02.allyourbases.co/robots.txt
+User-agent: *
+
+Allow: /
+Disallow: /4ext6b6.html
+```
+
+The flag is located in the hidden page.
+
+```bash
+$ curl https://cfta-we02.allyourbases.co/4ext6b6.html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Eclipse :: 4ext6b6</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body class="body-bg">
+        <div class="logo">Eclipse Media</div>
+        <div class="navbar">
+            <div class="nav-options">
+                <a class="options"></a>
+                <ul>
+                    <li><a href="index.html" class="href">Home</a></li>
+                    <li><a href="about.html" class="href">About</a></li>
+                    <li><a href="news.html" class="href">News</a></li>
+                    <li><a href="contact.html" class="href">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrap">
+            <div class="panel">
+                <div class="ext">
+                    Flag: Shhh_robot_you_said_too_much!
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+```
+
+---
+
+## WM01
+
+![Points: 250](https://img.shields.io/badge/Points-250-blue)
+
+**Challenge Category**
+
+![Web](https://img.shields.io/badge/Web-brightgreen)
+
+**Challenge Description**
+
+```
+View the page at https://cfta-wm01.allyourbases.co and try to get the flag.
+```
+
+**Flag**
+
+```
+XGHEV7HGEV
+```
+
+### Solution
+
+![wm01_index.png](img/screenshots/wm01_index.png)
+
+If we look at the source code for the page, we see that the site is loading a javascript file named `site.js`.
+
+![wm01_1.png](img/screenshots/wm01_1.png)
+
+The javascript code mentions a directory named `/new-images`. Let's check that out.
+
+![wm01_2.png](img/screenshots/wm01_2.png)
+
+It looks like there's a ton of images in this directory. Let's see if any of them give us hints to where the flag is.
+
+![IMG_20201116_0817.jpg](files/wm01/IMG_20201116_0817.jpg)
+
+This image mentions a directory named `mii-home`. Let's see if that exists on this site:
+
+![wm01_mii-home.png](img/screenshots/wm01_mii-home.png)
+
+Looks like it does. Now we just have to figure out how to login.
+
+If we look at the source code, we can see a `login` function in `login.js`. More importantly, there seems to be a hardcoded check for email and password values.
+
+![wm01_3.png](img/screenshots/wm01_3.png)
+
+Let's see what it evaluates to.
+
+![wm01_4.png](img/screenshots/wm01_4.png)
+
+Looks like we have login credentials. Once we login, we see a page with seveeal camera feeds:
+
+![wm01_security-camera.png](img/screenshots/wm01_security-camera.png)
+
+While clicking through the different rooms, we can see a password being shown on the `office` feed:
+
+![office.gif](files/wm01/office.gif)
+
+The WiFi password is the flag.
+
+---
+
+## WM02
+
+![Points: 250](https://img.shields.io/badge/Points-250-blue)
+
+**Challenge Category**
+
+![Web](https://img.shields.io/badge/Web-brightgreen)
+
+**Challenge Description**
+
+```
+View the page at https://cfta-wm02.allyourbases.co and try to get the flag.
+```
+
+**Flag**
+
+```
+epoch_wizard
+```
+
+### Solution
+
+![wm02_index.png](img/screenshots/wm02_index.png)
+
+When we look at the source code of the site, we see a javascript file being loaded which contains this snippet:
+
+```javascript
+    function checkUser() {
+        if (get("user").dataset['userRef'] === hash(get("user").dataset['userName'] + "_" + get("user").dataset['userId']).split("").reverse().join("")) {
+            if (-1 === get("avatar").src.indexOf(get("user").dataset['userRef'] + ".jpg")) {
+                top.initTime = undefined;
+                fetch('api/' + get("user").dataset['userRef'] + '.json')
+                    .then(response => {
+                        if (false === response.ok) {
+                            get("user").innerText = "Invalid user";
+                            get("time").innerHTML = "";
+                        }
+                        return response.json();
+                    })
+                    .then(json => {
+                        top.initTime = json.time;
+                        get("avatar").src = get("user").dataset['userRef'] + ".jpg";
+                        get("user").innerText = "Hello " + get("user").dataset['userName'] + "!";
+                        if ("undefined" !== typeof json.flag) {
+                            get("userInfo").style.height = "400px";
+                            get("userInfo").style.margin = "-200px 0 0 -150px";
+                            get("userInfo").style.color = "#b00";
+                            setTimeout(function () {
+                                get("userInfo").innerHTML += "<br><br>" +
+                                    "Flag:<br>" + json.flag;
+                            }, 2200);
+                        }
+                    })
+            }
+            if ("undefined" !== typeof top.initTime) {
+                get("time").innerHTML = "Secs since init:<br>" + parseInt(Date.now() / 1000 - top.initTime, 10);
+            }
+        } else {
+            get("user").innerText = "User data error";
+            get("time").innerHTML = "";
+        }
+    }
+
+    $.hash = hash, $.checkUser = checkUser;
+
+    window.onload = checkUser;
+    setInterval(function() {
+        checkUser();
+    }, 1000);
+```
+
+It looks like the page is running `checkUser` every second. The javascript also contains a large chunk of code above this that computes the md5 hash of it's input.
+
+Let's break down what's going on inside the function. Note: I'll be removing and modifying irrelevant code to make it easier to understand.
+
+First we have this:
+
+```javascript
+        if (get("user").dataset['userRef'] === hash(get("user").dataset['userName'] + "_" + get("user").dataset['userId']).split("").reverse().join(""))
+```
+
+This line is taking the `data-user-ref` value from the page's html code and comparing it against the backwards md5 hash of the fields `data-user-name` and `data-user-id`, combined with a `_`.
+
+Next, we have:
+
+```javascript
+            if (-1 === get("avatar").src.indexOf(get("user").dataset['userRef'] + ".jpg")) {
+                fetch('api/' + get("user").dataset['userRef'] + '.json')
+                    .then(response => {
+                        if (false === response.ok) {
+                            get("user").innerText = "Invalid user";
+                        }
+                        return response.json();
+```
+
+The first line is basically checking if the current value in `data-user-ref` doesn't match the avatar's image name. In other words, it's checking if the `data-user-ref` has been modified. If it has been modified, it checks for a corresponding json file located in the `api` directory. If the `data-user-ref` does not have a corresponding json file, it will change the text to `Invalid User`.
+
+After that, we have this:
+
+```javascript
+                    .then(json => {
+                        get("avatar").src = get("user").dataset['userRef'] + ".jpg";
+                        get("user").innerText = "Hello " + get("user").dataset['userName'] + "!";
+                        if ("undefined" !== typeof json.flag) {
+                            get("userInfo").innerHTML += "<br><br>" + "Flag:<br>" + json.flag;
+                        }
+```
+
+Now, assuming we've found a valid `data-user-ref`, it will then load the corresponding avatar and change the `Hello` message to greet your new username. Furthermore, if the json file from the `api` directory contains a flag, it will print the flag to the screen.
+
+So basically what we've gathered from all this is that we need to guess a valid username and id to retrieve the flag. We can start off with the usual suspects (`admin`, `root`, `user`, `guest`, etc.) for the username, and based off of the `id` for `henrywhite`, we can assume the id is likely somewhere between `0` and `152874`.
+
+It doesn't take us long to find a valid username and id, because our first attempt with username `admin` and id `0` was valid. Now all we have to do is update the values in the html to retrieve the flag.
+
+![wm02_1.png](img/screenshots/wm02_1.png)
+
+Now we just give it a second for it to run the `checkUser` function:
+
+![wm02_2.png](img/screenshots/wm02_2.png)
+
+---
+
+## WM03
+
+![Points: 250](https://img.shields.io/badge/Points-250-blue)
+
+**Challenge Category**
+
+![Web](https://img.shields.io/badge/Web-brightgreen)
+
+**Challenge Description**
+
+```
+Visit the site at https://cfta-wm03.allyourbases.co and find a way to bypass the password check.
+```
+
+**Flag**
+
+```
+theLOOSEtheMATH&theTRUTHY
+```
+
+### Solution
+
+![wm03_index.png](img/screenshots/wm03_index.png)
+
+If we look at the source code, we notice this section of commented out code:
+
+```html
+        <!--
+        TODO: remove, taken from OSS project, login contains:
+        return function ($event) {
+            require_once("flag.php");
+            $hash = "0e747135815419029880333118591372";
+            $salt = "e361bfc569ba48dc";
+            if (isset($event['password']) && is_string($event['password'])) {
+                if (md5($salt . $event['password']) == $hash) {
+                    return $flag;
+                }
+            }
+            return "Incorrect";
+        };
+        -->
+```
+
+It looks like this is the password check function. All we have to do is find a correct input that equals the salted md5 hash. Of course, it's very unlikely for us to be able to brute force the hash. We need to find another way to pass the check. If we check the php documentation for the [md5](https://www.php.net/manual/en/function.md5.php) function, someone in the comments mentions this:
+
+> md5('240610708') == md5('QNKCDZO')
+>
+> This comparison is true because both md5() hashes start '0e' so PHP type juggling understands these strings to be scientific notation.  By definition, zero raised to any power is zero.
+
+Interesting, looks like the same situation applies to us. All we have to do is find a valid input that starts with `0e` and ends with all numbers.
+
+```python
+#!/usr/bin/env python3
+from itertools import product
+from hashlib import md5
+from re import match
+
+
+def find_password():
+    charset = bytes(c for c in range(0x20, 0x7f))
+    salt = b'e361bfc569ba48dc'
+    i = 1
+    while True:
+        for password in product(charset, repeat=i):
+            pwhash = md5(salt+bytes(password)).hexdigest()
+            if match('^0+e\d+$', pwhash):
+                return bytes(password).decode()
+        i += 1
+
+
+if __name__ == '__main__':
+    valid = find_password()
+    print(valid)
+```
+
+After about a minute, we find a valid password: `cqZa`.
+
+![wm03_1.png](img/screenshots/wm03_1.png)
+
+---
+
+## WM04
+
+![Points: 250](https://img.shields.io/badge/Points-250-blue)
+
+**Challenge Category**
+
+![Web](https://img.shields.io/badge/Web-brightgreen)
+
+**Challenge Description**
+
+```
+Visit the Italian dish suggestion site at https://cfta-wm04.allyourbases.co and find a way to get the flag.
+```
+
+**Flag**
+
+```
+t3mpl4te_vu1n
+```
+
+### Solution
+
+![wm04_index.png](img/screenshots/wm04_index.png)
+
+If we look at the source code, we can see the site is making a request to a remote server whenever we search for something:
+
+```javascript
+function search(query) {
+    $.ajax({
+        type: "POST",
+        url: 'https://6feducn4d2.execute-api.eu-west-1.amazonaws.com/stag/wm04',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            'search': query
+        }),
+        success: function(res) {
+            if (-1 != res.body.indexOf("<h2>")) {
+                document.getElementById("suggestions").innerHTML = "<h1>Why not try...</h1>" + res.body;
+                document.getElementById("errors").innerHTML = "";
+            } else {
+                document.getElementById("suggestions").innerHTML = "";
+                document.getElementById("errors").innerHTML = "<h1>Ooops, couldn't find any suggestions</h1>" + res.body;
+            }
+        },
+        error: function(err){
+            console.log(err);
+        }
+    })
+};
+```
+
+After some messing around with the paramter and values, we find out the server is using Jinja to handle the requests. If we type `{{}}` into the search bar, we see this error in the response:
+
+```json
+{
+    "errorMessage": "Expected an expression, got 'end of print statement'",
+    "errorType": "TemplateSyntaxError",
+    "stackTrace": [
+        "  File \"/var/task/lambda_function.py\", line 42, in lambda_handler\n    'body': handle(event)\n",
+        "  File \"/var/task/lambda_function.py\", line 34, in handle\n    msg = Template(template).render(dir=dir, help=help, locals=locals, globals=globals, template=flag)\n",
+        "  File \"/var/task/jinja2/environment.py\", line 1031, in __new__\n    return env.from_string(source, template_class=cls)\n",
+        "  File \"/var/task/jinja2/environment.py\", line 941, in from_string\n    return cls.from_code(self, self.compile(source), globals, None)\n",
+        "  File \"/var/task/jinja2/environment.py\", line 638, in compile\n    self.handle_exception(source=source_hint)\n",
+        "  File \"/var/task/jinja2/environment.py\", line 832, in handle_exception\n    reraise(*rewrite_traceback_stack(source=source))\n",
+        "  File \"/var/task/jinja2/_compat.py\", line 28, in reraise\n    raise value.with_traceback(tb)\n", "  File \"<unknown>\", line 2, in template\n"
+    ]
+}
+```
+
+If we look at this line in the error:
+
+```json
+        "  File \"/var/task/lambda_function.py\", line 34, in handle\n    msg = Template(template).render(dir=dir, help=help, locals=locals, globals=globals, template=flag)\n",
+```
+
+We notice the flag is being passed in the `template` variable. Let's try calling it:
+
+![wm04_1.png](img/screenshots/wm04_1.png)
