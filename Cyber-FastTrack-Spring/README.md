@@ -150,6 +150,8 @@ binwalk -Meq chicken.pdf
 
 One of the extracted files is [egg.pdf](files/be01/egg.pdf). View the pdf to retrieve the flag.
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## BE02
@@ -203,6 +205,8 @@ Aborted (core dumped)
 Flag: luckyNumber13
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## BM01
@@ -254,6 +258,8 @@ $ ./program
 
 флаг: wh1te%BluE$R3d
 ```
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -313,6 +319,8 @@ Breakpoint 1, 0x00005555554007e7 in main ()
 (gdb) call (void)printFlag(1337)
 Flag: patchItFixIt
 ```
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -381,6 +389,8 @@ Breakpoint 1, main () at flag.c:30
 \__,_/ \___//_.___/ \__,_/ \__, / \__, //_//_/ /_/ \__, /______/_/   \__/  |__/|__/
                           /____/ /____/           /____//_____/
 ```
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -469,6 +479,8 @@ Flag: aLittLeObfuScatIonalCharActEr
 Did you understand that?
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## BX01
@@ -530,6 +542,8 @@ if __name__ == '__main__':
     response = terminatebrackets()
     print(response.decode())
 ```
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -680,6 +694,8 @@ Flag: ThIsOneIsAbITFuZZy-6y
 DEBUG: Waiting 100ms
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## CM01
@@ -736,6 +752,8 @@ QR-Code:Hey, I've put the flag into the other file using the same trick we alway
 scanned 1 barcode symbols from 1 images in 0 seconds
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## CM02
@@ -788,6 +806,8 @@ if __name__ == '__main__':
 ```
 
 Once we have the new text, we can copy and paste it into an automatic decrpytion tool, such as [guballa](https://www.guballa.de/substitution-solver), to retrieve the flag.
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -915,6 +935,8 @@ if __name__ == '__main__':
 
 [RSA Attacks: Common Modulus](https://infosecwriteups.com/rsa-attacks-common-modulus-7bdb34f331a5)
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## CH02
@@ -958,6 +980,8 @@ message 1: keep guessing for the flag
 message 2: the flag is ShimmyShimmyYa
 key:       ETheSameOTPKeyItsNotSecure
 ```
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -1021,6 +1045,8 @@ Once we recover the phrase, we can use a [mnemonic code converter](https://ianco
 [BIP39 Documentation](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
 [BIP39 English Wordlist](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt)
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## FE01
@@ -1029,7 +1055,7 @@ Once we recover the phrase, we can use a [mnemonic code converter](https://ianco
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1061,6 +1087,8 @@ Unzip the file with the password to retrieve the flag.
 
 ![flag.jpg](files/fe01/flag.jpg)
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## FE02
@@ -1069,7 +1097,7 @@ Unzip the file with the password to retrieve the flag.
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1114,6 +1142,8 @@ cfta-fe02.allyourbases.co. 299  IN      TXT     "flag=unlimited_free_texts"
 ;; MSG SIZE  rcvd: 156
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## FE03
@@ -1122,7 +1152,7 @@ cfta-fe02.allyourbases.co. 299  IN      TXT     "flag=unlimited_free_texts"
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1151,6 +1181,8 @@ $ grep -iaR flag
 20f27a62bd4b6360e6d71ee3b6e3d4e23d27f8316853b5f115134dc496b76921/layer.tar:home/0040755000000000000000000000000014023411217010173 5ustar0000000000000000home/secret/0042755000014400001450000000000014023416047011513 5ustar0000000000000000home/secret/flag.txt0100664000000000000000000000004514023416024013131 0ustar0000000000000000Flag: 8191-SiMpLeFilESysTemForens1Cs
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## FE04
@@ -1159,7 +1191,7 @@ $ grep -iaR flag
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1190,6 +1222,8 @@ $ egrep '^..x[2-6].+S$' 50k-users.txt | grep Z
 YXx52hsi3ZQ5b9rS
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## FM01
@@ -1198,7 +1232,7 @@ YXx52hsi3ZQ5b9rS
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1228,6 +1262,8 @@ Text Layer Text                 : flag: tr4il3r_p4rk
 ...
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## FM02
@@ -1236,7 +1272,7 @@ Text Layer Text                 : flag: tr4il3r_p4rk
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1353,6 +1389,8 @@ but you found the flag!
 Flag: NESted_in_a_PCAP
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## FM03
@@ -1361,7 +1399,7 @@ Flag: NESted_in_a_PCAP
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1421,6 +1459,8 @@ $ cat /media/veracrypt1/Flag/flag.txt
 Us3_5tr0ng_P@55w0Rds!
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## FH01
@@ -1429,7 +1469,7 @@ Us3_5tr0ng_P@55w0Rds!
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1470,6 +1510,8 @@ Unzip the file to retrieve the flag.
 
 ![5.jpg](files/fh01/5.jpg)
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## NE01
@@ -1508,6 +1550,8 @@ PORT     STATE SERVICE VERSION
 |     ID: ne01
 |_    Flag: Nmap_0f_the_W0rld!
 ```
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -1551,6 +1595,8 @@ if __name__ == '__main__':
     print(r.recvall().decode())
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## WE01
@@ -1582,6 +1628,8 @@ When we visit the page, we see this:
 The text on the site is javascript code translated to [Aurebesh](https://starwars.fandom.com/wiki/Aurebesh). Despite being translated to another language, javascript can still interpret this code perfectly fine. Copy and paste the code into the debugging console to retrieve the flag.
 
 ![we01_1.png](img/screenshots/we01_1.png)
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -1655,6 +1703,8 @@ $ curl https://cfta-we02.allyourbases.co/4ext6b6.html
 </html>
 ```
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## WM01
@@ -1716,6 +1766,8 @@ While clicking through the different rooms, we can see a password being shown on
 ![office.gif](files/wm01/office.gif)
 
 The WiFi password is the flag.
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -1839,6 +1891,8 @@ Now we just give it a second for it to run the `checkUser` function:
 
 ![wm02_2.png](img/screenshots/wm02_2.png)
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## WM03
@@ -1919,6 +1973,8 @@ if __name__ == '__main__':
 After about a minute, we find a valid password: `cqZa`.
 
 ![wm03_1.png](img/screenshots/wm03_1.png)
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -2001,6 +2057,8 @@ We notice the flag is being passed in the `template` variable. Let's try calling
 
 ![wm04_1.png](img/screenshots/wm04_1.png)
 
+[*Back to top*](#cyber-fasttrack-spring-2021)
+
 ---
 
 ## WM05
@@ -2050,6 +2108,8 @@ Interestingly enough, we see a hidden directory named `...`.
 Look's like we've found the flag. Now all we have to do is read it.
 
 ![wm05_6.png](img/screenshots/wm05_6.png)
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -2140,6 +2200,8 @@ $ for i in {1..254}; do curl -s https://cfta-wh01.allyourbases.co/admin.html -H 
 </html>
 Page found using: 192.168.0.62
 ```
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -2255,6 +2317,8 @@ index dc5e9b1..0000000
 -unzip sitedata.zip
 -
 ```
+
+[*Back to top*](#cyber-fasttrack-spring-2021)
 
 ---
 
@@ -2459,3 +2523,5 @@ $ curl -s https://6feducn4d2.execute-api.eu-west-1.amazonaws.com/stag/wx01 -X PO
    "statusCode" : 200
 }
 ```
+
+[*Back to top*](#cyber-fasttrack-spring-2021)

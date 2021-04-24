@@ -19,11 +19,11 @@ Competitors must reverse-engineer, break, hack, decrypt, and think creatively an
 - [crackme-py](#crackme-py) ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
 - [Easy Peasy](#easy-peasy) ![Cryptography](https://img.shields.io/badge/Cryptography-blue)
 - [Get aHEAD](#get-ahead) ![Web Exploitation](https://img.shields.io/badge/Web%20Exploitation-brightgreen)
-- [information](#information) ![Forensics](https://img.shields.io/badge/Forensics-orange)
+- [information](#information) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 - [keygenme-py](files/keygenme_py/keygenme-trial.py) ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
-- [MacroHard WeakEdge](#macrohard-weakedge) ![Forensics](https://img.shields.io/badge/Forensics-orange)
+- [MacroHard WeakEdge](#macrohard-weakedge) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 - [Magikarp Ground Mission](#magikarp-ground-mission) ![General Skills](https://img.shields.io/badge/General%20Skills-yellow)
-- [Matryoshka doll](#matryoshka-doll) ![Forensics](https://img.shields.io/badge/Forensics-orange)
+- [Matryoshka doll](#matryoshka-doll) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 - [Mind your Ps and Qs](#mind-your-ps-and-qs) ![Cryptography](https://img.shields.io/badge/Cryptography-blue)
 - [Mod 26](#mod-26) ![Cryptography](https://img.shields.io/badge/Cryptography-blue)
 - [New Caesar](#new-caesar) ![Cryptography](https://img.shields.io/badge/Cryptography-blue)
@@ -35,11 +35,11 @@ Competitors must reverse-engineer, break, hack, decrypt, and think creatively an
 - [Static ain't always noise](#static-aint-always-noise) ![General Skills](https://img.shields.io/badge/General%20Skills-yellow)
 - [Tab, Tab, Attack](#tab-tab-attack) ![General Skills](https://img.shields.io/badge/General%20Skills-yellow)
 - [Transformation](#transformation) ![Reverse Engineering](https://img.shields.io/badge/Reverse%20Engineering-red)
-- [Trivial Flag Transfer Protocol](#trivial-flag-transfer-protocol) ![Forensics](https://img.shields.io/badge/Forensics-orange)
-- [tunn3l v1s10n](#tunn3l-v1s10n) ![Forensics](https://img.shields.io/badge/Forensics-orange)
+- [Trivial Flag Transfer Protocol](#trivial-flag-transfer-protocol) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
+- [tunn3l v1s10n](#tunn3l-v1s10n) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 - [Wave a flag](#wave-a-flag) ![General Skills](https://img.shields.io/badge/General%20Skills-yellow)
-- [Weird File](#weird-file) ![Forensics](https://img.shields.io/badge/Forensics-orange)
-- [Wireshark doo dooo do doo...](#wireshark-doo-dooo-do-doo) ![Forensics](https://img.shields.io/badge/Forensics-orange)
+- [Weird File](#weird-file) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
+- [Wireshark doo dooo do doo...](#wireshark-doo-dooo-do-doo) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 ## To Do
 
@@ -76,6 +76,8 @@ picoCTF{th4ts_k1nd4_n34t_3bed1170}
 The flag is hidden in the javascript functions, which appends each individual character of the flag to the url when you first load the page. you can manually extract the flag by inspecting the source code.
 
 ![ancient_history1.jpg](img/screenshots/ancient_history1.jpg)
+
+[*Back to top*](#picoctf-2021)
 
 ---
 
@@ -132,6 +134,8 @@ Now we're ready to start the attack. After letting it run for a bit, we see this
 
 ![cookies6.jpg](img/screenshots/cookies6.jpg)
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## crackme-py
@@ -173,6 +177,8 @@ The number with largest positive magnitude is
 >>> decode_secret(bezos_cc_secret)
 picoCTF{1|\/|_4_p34|\|ut_4593da8a}
 ```
+
+[*Back to top*](#picoctf-2021)
 
 ---
 
@@ -247,6 +253,8 @@ if __name__ == "__main__":
     print(f"picoCTF{{{flag}}}")
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## GET aHEAD
@@ -278,6 +286,8 @@ Going by the name of the challenge, we try sending a `HEAD` request to the serve
 
 ![get_ahead.jpg](img/screenshots/get_ahead.jpg)
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## information
@@ -286,7 +296,7 @@ Going by the name of the challenge, we try sending a `HEAD` request to the serve
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -322,6 +332,8 @@ $ strings cat.jpg
 $ echo cGljb0NURnt0aGVfbTN0YWRhdGFfMXNfbW9kaWZpZWR9 | base64 -d
 picoCTF{the_m3tadata_1s_modified}
 ```
+
+[*Back to top*](#picoctf-2021)
 
 ---
 
@@ -445,6 +457,8 @@ missing_chars = ''.join(name_hash[c] for c in char_index)
 print(f"picoCTF{{1n_7h3_|<3y_of_{missing_chars}}}")
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## MacroHard WeakEdge
@@ -453,7 +467,7 @@ print(f"picoCTF{{1n_7h3_|<3y_of_{missing_chars}}}")
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -505,6 +519,8 @@ $ base64 -id ppt/slideMasters/hidden
 flag: picoCTF{D1d_u_kn0w_ppts_r_z1p5}
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Magikarp Ground Mission
@@ -555,6 +571,8 @@ $ cat ~/3of3.flag.txt
 21cac893}
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Matryoshka doll
@@ -563,7 +581,7 @@ $ cat ~/3of3.flag.txt
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -601,6 +619,8 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 ```
 
 From the output of `binwalk`, we see there is an extracted file named `flag.txt`. `cat` the file to get the flag.
+
+[*Back to top*](#picoctf-2021)
 
 ---
 
@@ -653,6 +673,8 @@ m = pow(c, d, n)
 print(long_to_bytes(m).decode())
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Mod 26
@@ -681,6 +703,8 @@ picoCTF{next_time_I'll_try_2_rounds_of_rot13_TLcKBUdK}
 ### Solution
 
 Use a tool, such as [CyberChef](https://gchq.github.io/CyberChef/#recipe=ROT13(true,true,false,13)), to decrypt the flag using `ROT13`.
+
+[*Back to top*](#picoctf-2021)
 
 ---
 
@@ -800,6 +824,8 @@ Key: f
 Decrypted message: TcNcd.N PR$U"S&(!/P'$% /PUTQ!$&!'" SPP'
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Nice netcat...
@@ -877,6 +903,8 @@ $ nc mercury.picoctf.net 22902
 
 Take the integers and use a tool, such as [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Decimal('Space',false)), to convert it from decimal to ascii.
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Obedient Cat
@@ -914,6 +942,8 @@ Run `cat` on the file.
 $ cat flag
 picoCTF{s4n1ty_v3r1f13d_28e8376d}
 ```
+
+[*Back to top*](#picoctf-2021)
 
 ---
 
@@ -957,6 +987,8 @@ $ python ende.py -d flag.txt.en
 Please enter the password:dbd1bea4dbd1bea4dbd1bea4dbd1bea4
 picoCTF{4p0110_1n_7h3_h0us3_dbd1bea4}
 ```
+
+[*Back to top*](#picoctf-2021)
 
 ---
 
@@ -1025,6 +1057,8 @@ And finally, this last part hints towards the [.DS_Store](http://mercury.picoctf
 
 ![scavenger_hunt7.jpg](img/screenshots/scavenger_hunt7.jpg)
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Some Assembly Required 1
@@ -1055,6 +1089,8 @@ picoCTF{8857462f9e30faae4d037e5e25fee1ce}
 The name of the challenge refers to a JavaScript `WebAssembly` file. You can view `WebAssembly` files in the `Debugger` tab of your browser's developer tools. Scroll to the bottom to find the flag.
 
 ![some_assembly_required_11.jpg](img/screenshots/some_assembly_required_11.jpg)
+
+[*Back to top*](#picoctf-2021)
 
 ---
 
@@ -1102,6 +1138,8 @@ Contents of section .data:
  201030 33347333 725f6363 62326234 33657d00  34s3r_ccb2b43e}.
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Tab, Tab, Attack
@@ -1141,6 +1179,8 @@ $ egrep -aoir 'picoCTF\{[^\}]+\}' Addadshashanammu
 Addadshashanammu/Almurbalarammi/Ashalmimilkala/Assurnabitashpi/Maelkashishi/Onnissiralis/Ularradallaku/fang-of-haynekhtnamet:picoCTF{l3v3l_up!_t4k3_4_r35t!_d32e018c}
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Transformation
@@ -1179,6 +1219,8 @@ $ python3 -c "with open('enc','rb') as f:print(''.join(chr(i>>8)+chr(i&0xff) for
 picoCTF{16_bits_inst34d_of_8_26684c20}
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Trivial Flag Transfer Protocol
@@ -1187,7 +1229,7 @@ picoCTF{16_bits_inst34d_of_8_26684c20}
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1257,6 +1299,8 @@ $ cat flag.txt
 picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## tunn3l v1s10n
@@ -1265,7 +1309,7 @@ picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1312,6 +1356,8 @@ We got the image to open properly, but we're still not there yet. Since the titl
 
 [THE BMP FILE FORMAT](http://www.ece.ualberta.ca/~elliott/ee552/studentAppNotes/2003_w/misc/bmp_file_format/bmp_file_format.htm)
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Wave a flag
@@ -1350,6 +1396,8 @@ $ egrep -aio 'picoCTF\{[^\}]+\}' warm
 picoCTF{b1scu1ts_4nd_gr4vy_18788aaa}
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Weird File
@@ -1358,7 +1406,7 @@ picoCTF{b1scu1ts_4nd_gr4vy_18788aaa}
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1420,6 +1468,8 @@ $ echo cGljb0NURnttNGNyMHNfcl9kNG5nM3IwdXN9 | base64 -d
 picoCTF{m4cr0s_r_d4ng3r0us}
 ```
 
+[*Back to top*](#picoctf-2021)
+
 ---
 
 ## Wireshark doo dooo do doo...
@@ -1428,7 +1478,7 @@ picoCTF{m4cr0s_r_d4ng3r0us}
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1456,3 +1506,5 @@ While inspecting the TCP streams, we see this in stream 5:
 ![wireshark_doo_dooo_do_doo1.jpg](img/screenshots/wireshark_doo_dooo_do_doo1.jpg)
 
 This looks a lot like our flag format, but encoded in ROT13. Decode it to get the flag.
+
+[*Back to top*](#picoctf-2021)

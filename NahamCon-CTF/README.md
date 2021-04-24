@@ -22,17 +22,17 @@ Special thank you to all of the events sponsors!
 - [Abyss](#abyss) ![Miscellaneous](https://img.shields.io/badge/Miscellaneous-purple)
 - [Alphabet Soup](#alphabet-soup) ![Miscellaneous](https://img.shields.io/badge/Miscellaneous-purple)
 - [Andra](#andra) ![Mobile](https://img.shields.io/badge/Mobile-green)
-- [Car Keys](#car-keys) ![Warmups](https://img.shields.io/badge/Warmups-yellow.svg)
-- [Chicken Wings](#chicken-wings) ![Warmups](https://img.shields.io/badge/Warmups-yellow.svg)
-- [Dice Roll](#dice-roll) ![Cryptography](https://img.shields.io/badge/Cryptography-blue.svg)
-- [Eighth Circle](#eighth-circle) ![Warmups](https://img.shields.io/badge/Warmups-yellow.svg)
-- [esab64](#esab64) ![Warmups](https://img.shields.io/badge/Warmups-yellow.svg)
+- [Car Keys](#car-keys) ![Warmups](https://img.shields.io/badge/Warmups-yellow)
+- [Chicken Wings](#chicken-wings) ![Warmups](https://img.shields.io/badge/Warmups-yellow)
+- [Dice Roll](#dice-roll) ![Cryptography](https://img.shields.io/badge/Cryptography-blue)
+- [Eighth Circle](#eighth-circle) ![Warmups](https://img.shields.io/badge/Warmups-yellow)
+- [esab64](#esab64) ![Warmups](https://img.shields.io/badge/Warmups-yellow)
 - [Gone Batty](#gone-batty) ![Miscellaneous](https://img.shields.io/badge/Miscellaneous-purple)
-- [Henpeck](#henpeck) ![Forensics](https://img.shields.io/badge/Forensics-orange.svg)
+- [Henpeck](#henpeck) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 - [Imposter](#imposter) ![Web](https://img.shields.io/badge/Web-brightgreen)
 - [Microscopium](#microscopium) ![Mobile](https://img.shields.io/badge/Mobile-green)
 - [Prison Break](#prison-break) ![Miscellaneous](https://img.shields.io/badge/Miscellaneous-purple)
-- [Shoelaces](#shoelaces) ![Warmups](https://img.shields.io/badge/Warmups-yellow.svg)
+- [Shoelaces](#shoelaces) ![Warmups](https://img.shields.io/badge/Warmups-yellow)
 
 ### Mission Challenges
 
@@ -55,9 +55,9 @@ Special thank you to all of the events sponsors!
 
 - [ ] $Echo ![Web](https://img.shields.io/badge/Web-brightgreen)
 - [ ] Bad Blog ![Web](https://img.shields.io/badge/Web-brightgreen)
-- [ ] Buzz ![Warmups](https://img.shields.io/badge/Warmups-yellow.svg)
+- [ ] Buzz ![Warmups](https://img.shields.io/badge/Warmups-yellow)
 - [ ] Cereal and Milk ![Web](https://img.shields.io/badge/Web-brightgreen)
-- [ ] Pollex ![Warmups](https://img.shields.io/badge/Warmups-yellow.svg)
+- [ ] Pollex ![Warmups](https://img.shields.io/badge/Warmups-yellow)
 - [ ] Resourceful ![Mobile](https://img.shields.io/badge/Mobile-green)
 - [ ] Zenith ![Miscellaneous](https://img.shields.io/badge/Miscellaneous-purple)
 
@@ -96,6 +96,8 @@ $ ssh -p 30459 user@challenge.nahamcon.com > out.txt
 $ egrep -o "flag\{[^\}]+\}" out.txt
 flag{db758a0cc25523993416c305ef15f9ad}
 ```
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -219,6 +221,8 @@ $ egrep -aio "flag\{[^\}]+\}" out
 flag{b6cfb6656ea0ac92849a06ead582456c}
 ```
 
+[*Back to top*](#nahamcon-ctf-2021)
+
 ---
 
 ## Andra
@@ -258,6 +262,8 @@ res/layout-v17/activity_flag.xml:flag{d9f72316dbe7ceab0db10bed1a738482}
 res/layout/activity_flag.xml:flag{d9f72316dbe7ceab0db10bed1a738482}
 ```
 
+[*Back to top*](#nahamcon-ctf-2021)
+
 ---
 
 ## Car Keys
@@ -287,6 +293,8 @@ flag{6f980c0101c8aa361977cac06508a3de}
 The flag is encrypted with a `Keyed Caesar` cipher. You can decrypt it with [Rumkin](http://rumkin.com/tools/cipher/caesar-keyed.php).
 
 ![car_keys1.jpg](img/screenshots/car_keys1.jpg)
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -319,6 +327,8 @@ flag{e0791ce68f718188c0378b1c0a3bdc9e}
 ### Solution
 
 The flag is encoded in `Wingdings`. Copy and paste into [dcode.fr](https://www.dcode.fr/wingdings-font) to get the flag.
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -423,6 +433,8 @@ flag{e915b62b2195d76bfddaac0160ed3194}
 
 [Mersenne Twister Predictor](https://github.com/kmyk/mersenne-twister-predictor)
 
+[*Back to top*](#nahamcon-ctf-2021)
+
 ---
 
 ## Eighth Circle
@@ -454,6 +466,8 @@ flag{bf201f669b8c4adf8b91f09165ec8c5c}
 ### Solution
 
 The challenge name hints towards [Malbolge](https://en.wikipedia.org/wiki/Malbolge). Use an online [interpreter](https://malbolge.doleczek.pl/) to retrieve the flag.
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -491,6 +505,8 @@ File contains a reversed base64 encoded string of the flag, which is also revers
 $ rev esab64 | base64 -d | rev
 flag{fb5211b498afe87b1bd0db601117e16e}_
 ```
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -574,6 +590,8 @@ $ ./batty.py
 flag{b395cc3e33cdebbec9d117292bd2e81c}
 ```
 
+[*Back to top*](#nahamcon-ctf-2021)
+
 ---
 
 ## Henpeck
@@ -582,7 +600,7 @@ flag{b395cc3e33cdebbec9d117292bd2e81c}
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -678,6 +696,8 @@ so the answer is flag{f7733e0093b7d281dd0a30fcf34a9634} hahahah lol
 
 [HID Usage Tables](https://usb.org/sites/default/files/documents/hut1_12v2.pdf)
 
+[*Back to top*](#nahamcon-ctf-2021)
+
 ---
 
 ## Imposter
@@ -753,6 +773,8 @@ If you follow through with the process, you should receive a password reset at t
 This triggers a password reset for `admin`, but the reset link is sent to your email instead. If you follow through with the reset password process, you can change the admin password to anything you want. Now we can just log in to the `admin` account and get the flag.
 
 ![imposter5.jpg](img/screenshots/imposter5.jpg)
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -868,6 +890,8 @@ Pin: 4784
 flag{06754e57e02b0c505149cd1055ba5e0b}
 ```
 
+[*Back to top*](#nahamcon-ctf-2021)
+
 ---
 
 ## Prison Break
@@ -901,6 +925,8 @@ user@host:/home/user$ cat '/just/out/of/reach/flag.txt'
 cat '/just/out/of/reach/flag.txt'
 flag{1345fd3cb55434ba17d9b64ca350ec78}
 ```
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -949,7 +975,7 @@ flag{137288e960a3ae9b148e8a7db16a69b0}
 
 **Challenge Category**
 
-![Mission](https://img.shields.io/badge/Mission-orange.svg)
+![Mission](https://img.shields.io/badge/Mission-orange)
 
 **Challenge Description**
 
@@ -973,6 +999,8 @@ Flag is in the source code of [The Mission](https://ctf.nahamcon.com/mission).
 <!-- Thank you for reading the rules! Your flag is: -->
 <!--   flag{48e117a1464c3202714dc9a350533a59}       -->
 ```
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -1016,6 +1044,8 @@ Disallow: /meet-the-team.html
 
 flag{33b5240485dda77430d3de22996297a1}  # this flag is for `Bionic`
 ```
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -1114,6 +1144,8 @@ the `meet-the-team.html` also contains a list of names of people on the team:
 
 This list will come in handy for the next part.
 
+[*Back to top*](#nahamcon-ctf-2021)
+
 ---
 
 ## The Mission — Path 1
@@ -1157,6 +1189,8 @@ flag{636db5f4f0e36908a4f1a4edc5b0676e}
 
 A password for Leo is `constelleorising`
 ```
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -1204,6 +1238,8 @@ sshpass -p starstruckherc ssh hercules@$IP -p $PORT
 # flag{5bf9da15002d7ea53cb487f31781ce47}
 ```
 
+[*Back to top*](#nahamcon-ctf-2021)
+
 ---
 
 ## The Mission — Path 3
@@ -1241,6 +1277,8 @@ Orion's full name is `Orion Morra`. You can find his flag on his [Twitter](https
 There is also a picture of credentials on his monitor.
 
 ![orion2.jpg](img/screenshots/orion2.jpg)
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -1325,6 +1363,8 @@ N4pDw4dXtWkkK51QaoiKJqPPjXEXztCVbeASLrQews9g2tCSu74O+caikahpEnS9DNWvRA
 yijZOk41Lh95EAAAAKam9obkB4cHMxNQE=
 -----END OPENSSH PRIVATE KEY-----
 ```
+
+[*Back to top*](#nahamcon-ctf-2021)
 
 ---
 
@@ -1433,3 +1473,5 @@ hoodstars
 deadstars
 citystars
 ```
+
+[*Back to top*](#nahamcon-ctf-2021)

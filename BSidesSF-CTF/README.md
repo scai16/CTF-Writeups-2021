@@ -21,18 +21,18 @@ The prizes (an Amazon gift card) for the winning teams are,
 ## Challenges
 
 - [ϕ-Corps Infiltration](#ϕ-corps-infiltration) ![Crypto](https://img.shields.io/badge/Crypto-blue)
-- [Glitch in the matrix](#glitch-in-the-matrix) ![Forensics](https://img.shields.io/badge/Forensics-orange)
-- [Great key hunt](#great-key-hunt) ![Forensics](https://img.shields.io/badge/Forensics-orange) ![RE](https://img.shields.io/badge/RE-red)
+- [Glitch in the matrix](#glitch-in-the-matrix) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
+- [Great key hunt](#great-key-hunt) ![Forensics](https://img.shields.io/badge/Forensics-darkorange) ![RE](https://img.shields.io/badge/RE-red)
 - [Hack The ______!](#hack-the-______) ![101](https://img.shields.io/badge/101-yellow)
 - [Hashcrack 101](#hashcrack-101) ![101](https://img.shields.io/badge/101-yellow) ![Crypto](https://img.shields.io/badge/Crypto-blue)
 - [I am not here](#i-am-not-here)
 - [In The Zone](#in-the-zone) ![Net](https://img.shields.io/badge/Net-green)
-- [layers.txt](#layerstxt) ![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-orange)
-- [Net Matroyshka](#net-matroyshka) ![1337](https://img.shields.io/badge/1337-red) ![Forensics](https://img.shields.io/badge/Forensics-orange) ![Net](https://img.shields.io/badge/Net-green)
-- [Résumé](#résumé) ![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-orange)
+- [layers.txt](#layerstxt) ![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
+- [Net Matroyshka](#net-matroyshka) ![1337](https://img.shields.io/badge/1337-darkred) ![Forensics](https://img.shields.io/badge/Forensics-darkorange) ![Net](https://img.shields.io/badge/Net-green)
+- [Résumé](#résumé) ![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 - [Shout into Void](#shout-into-void) ![Cloud](https://img.shields.io/badge/Cloud-skyblue)
 - [Thin Mint](#thin-mint) ![101](https://img.shields.io/badge/101-yellow) ![Web](https://img.shields.io/badge/Web-brightgreen)
-- [Unidecode](#unidecode) ![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-orange)
+- [Unidecode](#unidecode) ![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 - [Whole New Me](#whole-new-me) ![Cloud](https://img.shields.io/badge/Cloud-skyblue)
 - [Xoray](#xoray) ![101](https://img.shields.io/badge/101-yellow) ![Crypto](https://img.shields.io/badge/Crypto-blue)
 
@@ -42,20 +42,20 @@ The prizes (an Amazon gift card) for the winning teams are,
 - [ ] CSP 1 ![Web](https://img.shields.io/badge/Web-brightgreen)
 - [ ] CSP 2 ![Recharge](https://img.shields.io/badge/Recharge-yellow) ![Web](https://img.shields.io/badge/Web-brightgreen)
 - [ ] CuteSrv ![Web](https://img.shields.io/badge/Web-brightgreen)
-- [ ] denouement.png ![Forensics](https://img.shields.io/badge/Forensics-orange)
+- [ ] denouement.png ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 - [ ] Hangman Battle Royale ![Crypto](https://img.shields.io/badge/Crypto-blue)
 - [ ] Higher Hurdles ![101](https://img.shields.io/badge/101-yellow) ![Recharge](https://img.shields.io/badge/Recharge-yellow) ![Web](https://img.shields.io/badge/Web-brightgreen)
 - [ ] Message Store ![Mobile](https://img.shields.io/badge/Mobile-green) ![RE](https://img.shields.io/badge/RE-red)
 - [ ] PermCoin - Starter Attack ![101](https://img.shields.io/badge/101-yellow) ![Crypto](https://img.shields.io/badge/Crypto-blue)
-- [ ] Pwnzoo ![101](https://img.shields.io/badge/101-yellow) ![Pwn](https://img.shields.io/badge/Pwn-red)
+- [ ] Pwnzoo ![101](https://img.shields.io/badge/101-yellow) ![Pwn](https://img.shields.io/badge/Pwn-darkred)
 - [ ] Relaunch ![RE](https://img.shields.io/badge/RE-red) ![Recharge](https://img.shields.io/badge/Recharge-yellow) ![Win](https://img.shields.io/badge/Win-purple)
-- [ ] Reverseme ![101](https://img.shields.io/badge/101-yellow) ![Pwn](https://img.shields.io/badge/Pwn-red)
-- [ ] Reverseme 2 ![101](https://img.shields.io/badge/101-yellow) ![Pwn](https://img.shields.io/badge/Pwn-red)
-- [ ] Ropme ![Pwn](https://img.shields.io/badge/Pwn-red)
-- [ ] Runme ![101](https://img.shields.io/badge/101-yellow) ![Pwn](https://img.shields.io/badge/Pwn-red)
-- [ ] Runme2 ![101](https://img.shields.io/badge/101-yellow) ![Pwn](https://img.shields.io/badge/Pwn-red)
-- [ ] Runme3 ![Pwn](https://img.shields.io/badge/Pwn-red)
-- [ ] Tapesplice ![Forensics](https://img.shields.io/badge/Forensics-orange)
+- [ ] Reverseme ![101](https://img.shields.io/badge/101-yellow) ![Pwn](https://img.shields.io/badge/Pwn-darkred)
+- [ ] Reverseme 2 ![101](https://img.shields.io/badge/101-yellow) ![Pwn](https://img.shields.io/badge/Pwn-darkred)
+- [ ] Ropme ![Pwn](https://img.shields.io/badge/Pwn-darkred)
+- [ ] Runme ![101](https://img.shields.io/badge/101-yellow) ![Pwn](https://img.shields.io/badge/Pwn-darkred)
+- [ ] Runme2 ![101](https://img.shields.io/badge/101-yellow) ![Pwn](https://img.shields.io/badge/Pwn-darkred)
+- [ ] Runme3 ![Pwn](https://img.shields.io/badge/Pwn-darkred)
+- [ ] Tapesplice ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 ---
 
@@ -304,6 +304,8 @@ CTF{omg_rsa_destroyyyyyeeeeddddd}
 
 [Recommendation for Pair-Wise Key Establishment Using Integer Factorization Cryptography](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-56Br2.pdf)
 
+[*Back to top*](#bsidessf-ctf-2021)
+
 ---
 
 ## Glitch in the matrix
@@ -312,7 +314,7 @@ CTF{omg_rsa_destroyyyyyeeeeddddd}
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -352,6 +354,8 @@ Next I just loaded a ton of random images and replaced the DQT segment from our 
 
 ![glitchinthematrix_flag.jpg](files/glitch_in_the_matrix/glitchinthematrix-flag.jpg)
 
+[*Back to top*](#bsidessf-ctf-2021)
+
 ---
 
 ## Great key hunt
@@ -360,7 +364,7 @@ Next I just loaded a ton of random images and replaced the DQT segment from our 
 
 **Challenge Category**
 
-![Forensics](https://img.shields.io/badge/Forensics-orange) ![RE](https://img.shields.io/badge/RE-red)
+![Forensics](https://img.shields.io/badge/Forensics-darkorange) ![RE](https://img.shields.io/badge/RE-red)
 
 **Challenge Description**
 
@@ -391,6 +395,8 @@ Strings.
 $ egrep -aor 'CTF\{.+\}'
 core:CTF{core_secrets_are_still_secrets}
 ```
+
+[*Back to top*](#bsidessf-ctf-2021)
 
 ---
 
@@ -425,6 +431,8 @@ Reference to cult classic movie, [Hackers](https://www.imdb.com/title/tt0113243/
 ### References
 
 [Hackers](https://www.imdb.com/title/tt0113243/)
+
+[*Back to top*](#bsidessf-ctf-2021)
 
 ---
 
@@ -541,6 +549,8 @@ Now that we've cracked all the hashes, we just need to put them together in the 
 CTF{drink_all_the_booze_hack_all_the_things_dedicated_to_all_the_hackers}
 ```
 
+[*Back to top*](#bsidessf-ctf-2021)
+
 ---
 
 ## I am not here
@@ -565,6 +575,8 @@ Based on the name of the challenge and the description, we can probably assume t
 
 ![i_am_not_here1.jpg](img/screenshots/i_am_not_here1.jpg)
 
+[*Back to top*](#bsidessf-ctf-2021)
+
 ---
 
 ## layers.txt
@@ -573,7 +585,7 @@ Based on the name of the challenge and the description, we can probably assume t
 
 **Challenge Category**
 
-![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-orange)
+![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -608,6 +620,8 @@ Base85
 ```
 
 Decode the text in that order to get the flag.
+
+[*Back to top*](#bsidessf-ctf-2021)
 
 ---
 
@@ -664,7 +678,7 @@ dig +noidnout @in-the-zone-0a12d0c7.challenges.bsidessf.net bsidessf.net AXFR > 
 
 [inthezone.txt](files/in_the_zone/inthezone.txt)
 
-Nice.
+[*Back to top*](#bsidessf-ctf-2021)
 
 ---
 
@@ -674,7 +688,7 @@ Nice.
 
 **Challenge Category**
 
-![1337](https://img.shields.io/badge/1337-red) ![Forensics](https://img.shields.io/badge/Forensics-orange) ![Net](https://img.shields.io/badge/Net-green)
+![1337](https://img.shields.io/badge/1337-darkred) ![Forensics](https://img.shields.io/badge/Forensics-darkorange) ![Net](https://img.shields.io/badge/Net-green)
 
 **Challenge Description**
 
@@ -971,6 +985,8 @@ CTF{baby_wireshark_doo_doo_doo_baby_wireshark}
 [Git Internals - Transfer Protocols](https://git-scm.com/book/en/v2/Git-Internals-Transfer-Protocols)\
 [dnscat2 protocol](https://github.com/iagox86/dnscat2/blob/master/doc/protocol.md)
 
+[*Back to top*](#bsidessf-ctf-2021)
+
 ---
 
 ## Résumé
@@ -979,7 +995,7 @@ CTF{baby_wireshark_doo_doo_doo_baby_wireshark}
 
 **Challenge Category**
 
-![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-orange)
+![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1004,6 +1020,8 @@ CTF{shrieeeeeeeeeeeeeeeeeeeeeek}
 Open the PDF in Adobe. Copy the text under the black bar next to `ID:`. Paste it into a text document.
 
 ![resume1.jpg](img/screenshots/resume1.jpg)
+
+[*Back to top*](#bsidessf-ctf-2021)
 
 ---
 
@@ -1139,6 +1157,8 @@ CTF{Aud1t_th3_l0g5}
 
 [gcloud documentation](https://cloud.google.com/sdk/gcloud/reference/auth/activate-service-account)
 
+[*Back to top*](#bsidessf-ctf-2021)
+
 ---
 
 ## Thin Mint
@@ -1183,6 +1203,8 @@ Looks like it's the md5 hash for `anonymous`. What happens when we change the `t
 
 ![thin_mint4.jpg](img/screenshots/thin_mint4.jpg)
 
+[*Back to top*](#bsidessf-ctf-2021)
+
 ---
 
 ## Unidecode
@@ -1191,7 +1213,7 @@ Looks like it's the md5 hash for `anonymous`. What happens when we change the `t
 
 **Challenge Category**
 
-![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-orange)
+![101](https://img.shields.io/badge/101-yellow) ![Forensics](https://img.shields.io/badge/Forensics-darkorange)
 
 **Challenge Description**
 
@@ -1216,6 +1238,8 @@ CTF{utf8_is_a_binary_encoding_format}
 For this challenge, we are given a file, [flag.jpg.utf8](files/unidecode/flag.jpg.utf8). Given the name of the file, we can assume it was encoded with utf-8. All we should have to do is decode it and render the image. We can use [CyberChef](https://gchq.github.io/CyberChef/#recipe=Decode_text('UTF-8%20(65001)')Render_Image('Raw')) to do this for us.
 
 ![flag.jpg](files/unidecode/flag.jpg)
+
+[*Back to top*](#bsidessf-ctf-2021)
 
 ---
 
@@ -1317,6 +1341,8 @@ CTF{App3ng1n3_V3rs10n1ng}
 
 [Testing on App Engine](https://cloud.google.com/appengine/docs/flexible/nodejs/testing-and-deploying-your-app#testing-on-app-engine)
 
+[*Back to top*](#bsidessf-ctf-2021)
+
 ---
 
 ## Xoray
@@ -1387,3 +1413,5 @@ Looks like we've found a match. Let's check the output for any matches to the fl
 $ egrep -r 'CTF\{.+\}' xortool_out/
 xortool_out/032.out:    CTF{this_is_why_k4_remains_unsolved}
 ```
+
+[*Back to top*](#bsidessf-ctf-2021)
