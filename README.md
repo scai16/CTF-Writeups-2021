@@ -8,3 +8,4 @@
 | [NahamCon CTF 2021](NahamCon-CTF) | 12 March, 20:00 UTC — 14 March, 20:00 UTC |
 | [PicoCTF 2021](PicoCTF) | 16 March, 17:00 UTC — 30 March, 20:00 UTC |
 | [Cyber FastTrack Spring 2021](Cyber-FastTrack-Spring) | 05 April, 12:00 EDT — 07 April, 12:00 EDT |
+| **Cyber Apocalypse 2021** | 19 April, 12:00 UTC — 23 April, 18:00 UTC |
